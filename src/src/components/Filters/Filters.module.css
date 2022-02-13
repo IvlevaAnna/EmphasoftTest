@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.filters {
+    display: flex;
+    align-items: stretch;
+    gap: 15px;
+}
+
+@media (max-width: 570px) {
+    .text {
+        display: none;
+    }
+}
