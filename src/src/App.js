@@ -7,14 +7,12 @@ import {useState} from "react";
 function App() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [token, setToken] = useState(null)
 
   return (
     <div className="App">
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<LogIn setToken={setToken}
-                                                username={username}
+                <Route path='/' element={<LogIn username={username}
                                                 setUsername={setUsername}
                                                 password={password}
                                                 setPassword={setPassword}

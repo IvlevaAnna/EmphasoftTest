@@ -29,7 +29,7 @@ export const LogIn = ({username, setUsername, password, setPassword}) => {
         getToken(username, password)
             .then(result => {
                 result.token ? setValidation(false) : setValidation(true)
-                return result.token ?
+                return result.token && result.response.statusCode === 200 ?
                 navigate('../main', {replace: true}) : setValidation(true)
             })
     }

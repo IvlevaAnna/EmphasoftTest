@@ -9,7 +9,7 @@ import {useNavigate} from "react-router"
 
 
 export const Main = () => {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const [filters, setFilters] = useState({
         username: '',
         sort: false
@@ -28,6 +28,21 @@ export const Main = () => {
     }, [])
 
     useEffect(() => {
+        if (filters.sort) {
+            setData([...data].sort((a,b) => b.id - a.id))
+        } else {
+            const username = sessionStorage.getItem('username')
+            const password = sessionStorage.getItem('password')
+
+            getToken(username, password)
+                .then(result => {
+                    getData(result.token)
+                        .then(result => setData(result))
+                })
+        }
+    }, [filters.sort])
+
+    useEffect(() => {
         const username = sessionStorage.getItem('username')
         const password = sessionStorage.getItem('password')
 
@@ -40,13 +55,11 @@ export const Main = () => {
                         }))
                     })
             })
-    }, [filters.username])
 
-    useEffect(() => {
-        if(filters.sort){
-            setData(prevData => prevData.sort((a, b) => b.id - a.id))
+        if (filters.sort) {
+            setData([...data].sort((a,b) => b.id - a.id))
         }
-    }, [filters.sort])
+    }, [filters.username])
 
     const handleClickLogOut = () => {
         sessionStorage.clear()
@@ -77,9 +90,9 @@ export const Main = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        { data ? data.map((user) =>
-                            (<User user={user} key={`user-${user.id}-${Date.now()}`}/>))
-                            : null
+                        { data.map((user) => {
+                            return <User user={user} key={`${user.id}-${Date.now()}`}/>
+                        })
                         }
                     </TableBody>
                 </Table>
