@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/EmphasoftTest/static/css/main.b841f150.css",
-    "main.js": "/EmphasoftTest/static/js/main.3a05bff1.js",
+    "main.js": "/EmphasoftTest/static/js/main.70b96a88.js",
     "static/js/787.0bfccc2a.chunk.js": "/EmphasoftTest/static/js/787.0bfccc2a.chunk.js",
     "index.html": "/EmphasoftTest/index.html",
     "main.b841f150.css.map": "/EmphasoftTest/static/css/main.b841f150.css.map",
-    "main.3a05bff1.js.map": "/EmphasoftTest/static/js/main.3a05bff1.js.map",
+    "main.70b96a88.js.map": "/EmphasoftTest/static/js/main.70b96a88.js.map",
     "787.0bfccc2a.chunk.js.map": "/EmphasoftTest/static/js/787.0bfccc2a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b841f150.css",
-    "static/js/main.3a05bff1.js"
+    "static/js/main.70b96a88.js"
   ]
 }
